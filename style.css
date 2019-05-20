@@ -1,0 +1,68 @@
+:root{
+	--grid-width:114rem;
+	--gutter-vertical:8rem;
+	--gutter-horizantal:6rem;
+	}
+*,*::afar,*::before{
+box-sizing: inherit;
+margin: 0;
+padding: 0;
+}
+
+.row{
+	max-width: 114rem;
+	margin: 0 auto;
+}
+
+.row:not(:last-child){
+	margin-bottom: 8rem;
+}
+
+[class^="col-"]{
+	float: left;
+	font-size: 160%;
+}
+
+[class^="col-"]:not(:last-child){
+	margin-right: 6rem;
+}
+
+.col-1-of-2{
+	width: calc((100% - var(--gutter-horizantal))/2);
+}
+
+.col-1-of-3{
+	width: calc((100% - var(--gutter-horizantal) * 2 )/3);
+}
+
+.col-2-of-3{
+	width: calc((200% - var(--gutter-horizantal))/3)
+}
+
+.col-1-of-4{
+	width: calc((100% - 3 * var(--gutter-horizantal))/4);
+}
+
+.col-2-of-4{
+	width: calc((200% - 2 * var(--gutter-horizantal))/4);
+}
+
+.col-3-of-4{
+	width: calc((300% - var(--gutter-horizantal))/4);
+}
+
+.row::after{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+@media only screen  and(max-width:1200px){
+	[class^="col-"]{
+		width:100%;
+	}
+
+	.composition_photo{
+		display:none;
+	}
+}
